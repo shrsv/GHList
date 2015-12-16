@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My repositories</title>
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>My repositories</h1>
+    <script type="text/javascript">
+        $.getJSON("https://api.github.com/users/shrsv/repos", function (data) {
+            console.log(data)
+        })
+    </script>
+</body>
+</html>
