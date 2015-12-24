@@ -10,7 +10,12 @@
     <h1>My repositories</h1>
     <script type="text/javascript">
         $.getJSON("https://api.github.com/users/shrsv/repos", function (data) {
-            console.log(data)
+                console.log(data)
+                for (var x in data) {
+                    if (data.hasOwnProperty(x)) {
+                        console.log(x.name + ", " + x.description);
+                    }
+                }
         })
     </script>
 </body>
