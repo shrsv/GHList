@@ -9,13 +9,12 @@
 <body>
     <h1>My repositories</h1>
     <script type="text/javascript">
+        var m = "";
         $.getJSON("https://api.github.com/users/shrsv/repos", function (data) {
-                console.log(data)
-                for (var x in data) {
-                    if (data.hasOwnProperty(x)) {
-                        console.log(x.name + ", " + x.description);
-                    }
+                for (var i = 0; i < data.length; i++) { 
+                    m += "<a href='" + data[i].svn_url + "'>" + data[i].name + "</a><br />"; 
                 }
+                document.write(m)
         })
     </script>
 </body>
