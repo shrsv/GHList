@@ -8,13 +8,15 @@
 </head>
 <body>
     <h1>My repositories</h1>
+    <div id="result">Loading...</div>
     <script type="text/javascript">
-        var m = "";
+        var m = "<ol>";
         $.getJSON("https://api.github.com/users/shrsv/repos", function (data) {
                 for (var i = 0; i < data.length; i++) { 
-                    m += "<a href='" + data[i].svn_url + "'>" + data[i].name + "</a><br />"; 
+                    m += "<li><a href='" + data[i].svn_url + "'>" + data[i].name + "</a><br /></li>" 
                 }
-                document.write(m)
+                m += "</ol>"
+                $("#result").html(m)
         })
     </script>
 </body>
