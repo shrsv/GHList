@@ -3,21 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>My repositories</title>
-<script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-</head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <body>
-    <h1>My repositories</h1>
-    <div id="result">Loading...</div>
-    <script type="text/javascript">
-        var m = "<ol>";
-        $.getJSON("https://api.github.com/users/shrsv/repos", function (data) {
-                for (var i = 0; i < data.length; i++) { 
-                    m += "<li><a href='" + data[i].svn_url + "'>" + data[i].name + "</a><br /></li>" 
-                }
-                m += "</ol>"
-                $("#result").html(m)
-        })
-    </script>
+    <div class="container">
+        <h1>My repositories</h1>
+        <div id="result">Loading...</div>
+        <script type="text/javascript">
+            var m = "<ol>";
+            $.getJSON("https://api.github.com/users/shrsv/repos", function (data) {
+                    for (var i = 0; i < data.length; i++) { 
+                        m += "<li><a href='" + data[i].svn_url + "'>" + data[i].name + "</a><br /></li>" 
+                    }
+                    m += "</ol>"
+                    $("#result").html(m)
+            })
+        </script>
+    </div>
 </body>
 </html>
